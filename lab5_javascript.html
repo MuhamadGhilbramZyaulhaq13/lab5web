@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Program Check Kelulusan</title>
+</head>
+<body>
+  <h2>Program Check Kelulusan</h2>
+  <form name="formNilai" onsubmit="return cekNilai()">
+    Masukkan nilai (0-100): 
+    <input type="number" id="nilai" min="0" max="100" required>
+    <input type="submit" value="Cek Hasil">
+  </form>
+
+  <p id="hasil"></p>
+
+  <script>
+    function cekNilai() {
+      var nilai = document.getElementById("nilai").value;
+      var hasil = "";
+
+      if (nilai >= 60)
+        hasil = "Lulus 🎉";
+      else
+        hasil = "Tidak Lulus 😢";
+
+      document.getElementById("hasil").innerHTML = "Hasil: " + hasil;
+
+      return false;
+    }
+  </script>
+</body>
+</html>
